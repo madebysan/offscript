@@ -1,0 +1,20 @@
+{
+  "commit": "35438ba4080a9189577d561c5517e2932cb8edb7",
+  "branch": "main",
+  "version": "0.3.0",
+  "build": "3",
+  "bundle_id": "com.san.Cue",
+  "uncommitted_capture_inputs": [],
+  "uncommitted_captions_or_template": false,
+  "app_store_version": "not on the App Store",
+  "checked_at": "2026-10-17T16:58:30+00:00",
+  "platform": "macos",
+  "macos": "27.0",
+  "xcode": "Xcode 27.0",
+  "configuration": "Debug",
+  "appearance": "dark",
+  "run": "run-20261017-125830",
+  "screenshots": {
+    "screenshot.png": "1b4c86f8e14b548fadf48382e3b1ad28b976955f6a881c111e5526b977fc2d19"
+  }
+}
