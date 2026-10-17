@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SUFeedURL</key>
+	<string>https://github.com/madebysan/offscript/releases/latest/download/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>UAKRJmeYrucyUDj6yLMjYEKfKXE+M4iLxw7qKBrV8yU=</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<!-- Cue is sandboxed: Sparkle installs through its XPC launcher, and downloads
+	     through its own service because the app has no network entitlement. -->
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
+	<key>SUEnableDownloaderService</key>
+	<true/>
+</dict>
+</plist>
