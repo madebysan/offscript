@@ -54,13 +54,26 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         panel.isReleasedWhenClosed = false
         #if DEBUG
         let qaVisible = CommandLine.arguments.contains("--qa-visible")
-        panel.sharingType = qaVisible ? .readOnly : .none
+        let screenshots = CommandLine.arguments.contains("--screenshots")
+        panel.sharingType = qaVisible || screenshots ? .readOnly : .none
         #else
         panel.sharingType = .none
         #endif
         panel.hidesOnDeactivate = false
         panel.minSize = NSSize(width: 360, height: 90)
+        #if DEBUG
+        if screenshots {
+            // README screenshot: a fixed size, an opaque dark window, and the saved
+            // window position left alone
+            panel.setFrame(NSRect(origin: Self.topCenterOrigin(for: Self.screenshotSize), size: Self.screenshotSize), display: false)
+            panel.isOpaque = true
+            panel.backgroundColor = PrompterTheme.dark.background
+        } else {
+            panel.setFrameAutosaveName("CuePanel")
+        }
+        #else
         panel.setFrameAutosaveName("CuePanel")
+        #endif
 
         if testHidden {
             // Unattended test runs: the window runs but stays out of the way
@@ -117,6 +130,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         // Cue is a menu-bar utility — the status item is the persistent presence.
         false
     }
+
+    #if DEBUG
+    /// Window size for README screenshots (a 2x capture is 1280 x 720).
+    static let screenshotSize = NSSize(width: 640, height: 360)
+    #endif
 
     /// Centers a window horizontally on the main screen with its top edge
     /// pinned at the very top (so it appears to extend out of the notch area).

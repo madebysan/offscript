@@ -22,7 +22,8 @@ final class ScriptLibrary: ObservableObject {
     static let shared: ScriptLibrary = {
         #if DEBUG
         // Test runs use a throwaway file so they never touch your recent scripts
-        if CommandLine.arguments.contains("--test-script") {
+        // README screenshots do too, so they always show the practice script
+        if CommandLine.arguments.contains("--test-script") || CommandLine.arguments.contains("--screenshots") {
             let url = FileManager.default.temporaryDirectory.appendingPathComponent("test-scripts.json")
             try? FileManager.default.removeItem(at: url)
             return ScriptLibrary(fileURL: url)

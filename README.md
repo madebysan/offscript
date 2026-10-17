@@ -15,7 +15,7 @@ It doesn't lose your place when you skip ahead, pause or ad-lib.</p>
 
 <p><a href="https://github.com/madebysan/offscript/releases/latest">Download Offscript</a></p>
 
-![Offscript floating above a desktop, showing a script with the listening indicator active](assets/screenshot.jpg)
+![Offscript's prompter window mid-read, with the practice script and the reading position in the toolbar](assets/screenshots/screenshot.png)
 
 Offscript keeps track of where you are while you talk. Skip a paragraph, stop to ad-lib or rephrase a line, and it finds you again within a few words. Text in [brackets], like [pause] or [show the demo], stays on screen as a note and is never waited for. It runs on macOS 14 Sonoma or later, in a small window near the camera, for tutorials, talking-head videos and product walkthroughs.
 

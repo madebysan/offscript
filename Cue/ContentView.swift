@@ -72,6 +72,11 @@ struct ContentView: View {
             // Lets screenshots check the popover without clicking
             if CommandLine.arguments.contains("--qa-appearance") { showingAppearance = true }
             if let run = TestRun.current { prepareTestRun(run) }
+            // README screenshot: show the prompter mid-read, without the microphone
+            if CommandLine.arguments.contains("--screenshots") {
+                matcher.setCurrentIndex(64)
+                isRunning = true
+            }
             #endif
         }
         .onChange(of: themeChoice) { _, choice in

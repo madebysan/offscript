@@ -38,6 +38,7 @@ targets:
     scheme:
       testTargets:
         - CueTests
+        - CueUITests
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.san.Cue
@@ -75,3 +76,20 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.san.CueTests
         GENERATE_INFOPLIST_FILE: YES
+
+  # README screenshot capture (scripts/store-screenshots). Drives the Debug build's
+  # --screenshots mode, which never ships.
+  CueUITests:
+    type: bundle.ui-testing
+    platform: macOS
+    sources:
+      - path: CueUITests
+    dependencies:
+      - target: Cue
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.san.CueUITests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: Cue
+        # Ad-hoc signing: without this the test runner refuses to load the test bundle
+        ENABLE_HARDENED_RUNTIME: NO

@@ -1,0 +1,46 @@
+{
+  "app": {
+    "version_project": "Cue.xcodeproj",
+    "build_project": "Cue.xcodeproj",
+    "xcodegen_spec": "project.yml",
+    "scheme": "Cue",
+    "configuration": "Debug",
+    "xcodebuild_args": [],
+    "product": "Offscript",
+    "bundle_id": "com.san.Cue",
+    "simulator_bundle_id": "com.san.Cue",
+    "capture_inputs": [
+      "Cue",
+      "CueUITests",
+      "project.yml"
+    ]
+  },
+  "theme": {
+    "background": [
+      "#000000",
+      "#161616"
+    ],
+    "glow": "rgb(255 255 255 / 0.06)",
+    "text": "#F2F2F2",
+    "secondary": "#A0A0A0",
+    "accent": "#FFFFFF",
+    "kicker": "#A0A0A0",
+    "heading_font": "/System/Library/Fonts/SFNS.ttf",
+    "heading_weight": 600,
+    "kicker_font": "/System/Library/Fonts/SFNS.ttf",
+    "kicker_weight": 600
+  },
+  "locale": "screenshots",
+  "screenshots_root": "assets",
+  "provenance": "assets/screenshots-provenance.json",
+  "appearance": "dark",
+  "test": "CueUITests/StoreScreenshots/testCaptureStoreSet",
+  "slots": [
+    {
+      "file": "screenshot.png",
+      "capture": "prompter",
+      "frame": false
+    }
+  ],
+  "platform": "macos"
+}
