@@ -117,7 +117,7 @@ python3 "$HERE/frame.py" "$RUN/raw" "$RUN/framed"
 APPROVED="$RUN/approved"
 mkdir -p "$APPROVED"
 while IFS= read -r file; do
-  git -C "$ROOT" show "HEAD:$file" > "$APPROVED/$(basename "$file")"
+  git -C "$ROOT" show "HEAD:./$file" > "$APPROVED/$(basename "$file")"
 done < <(git -C "$ROOT" ls-tree --name-only HEAD "$SCREENSHOTS_REL/" | grep '\.png$' || true)
 python3 "$HERE/provenance.py" compare "$APPROVED" "$RUN/framed"
 
